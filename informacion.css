@@ -1,0 +1,611 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f8ff;
+    color: #172033;
+    line-height: 1.6;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 580px;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            #168bd844,
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 20% 80%,
+            #4d5cff33,
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #06101e,
+            #122b4b
+        );
+
+    color: white;
+}
+
+.hero-contenido {
+    width: 90%;
+    max-width: 950px;
+    margin: auto;
+}
+
+.etiqueta {
+    display: inline-block;
+
+    padding: 9px 18px;
+
+    border: 1px solid #ffffff44;
+
+    border-radius: 50px;
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 7vw, 82px);
+
+    line-height: 1;
+
+    max-width: 850px;
+
+    margin-bottom: 25px;
+}
+
+.hero p {
+    max-width: 650px;
+
+    font-size: 19px;
+
+    color: #c9d5e7;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   BOTONES
+========================= */
+
+.btn-volver {
+    display: inline-block;
+
+    padding: 14px 25px;
+
+    border-radius: 8px;
+
+    background: white;
+
+    color: #101d35;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.btn-volver:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 30px #0003;
+}
+
+
+/* =========================
+   TÍTULOS
+========================= */
+
+.titulo {
+    margin-bottom: 55px;
+}
+
+.titulo span {
+    color: #3764d8;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.titulo h2 {
+    font-size: 45px;
+
+    line-height: 1.1;
+
+    margin-top: 10px;
+}
+
+.subtitulo {
+    color: #68758a;
+
+    margin-top: 15px;
+
+    max-width: 650px;
+}
+
+
+/* =========================
+   HISTORIA
+========================= */
+
+.historia {
+    padding: 110px 0;
+
+    background: white;
+}
+
+.historia-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 65px;
+
+    align-items: center;
+}
+
+
+/* CUADRO DE IMAGEN */
+
+.imagen-empresa {
+    height: 450px;
+}
+
+.imagen-placeholder {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #dce8f7,
+            #b8cce5
+        );
+
+    border: 2px dashed #829bc0;
+
+    color: #53647b;
+
+    transition: 0.4s;
+}
+
+.imagen-placeholder:hover {
+    transform: scale(1.02);
+
+    box-shadow:
+        0 25px 50px #1e355522;
+}
+
+.imagen-placeholder span {
+    font-size: 75px;
+
+    margin-bottom: 15px;
+}
+
+.imagen-placeholder p {
+    font-size: 16px;
+}
+
+
+/* TEXTO HISTORIA */
+
+.año {
+    display: inline-block;
+
+    padding: 7px 17px;
+
+    background: #e5ecff;
+
+    color: #3764d8;
+
+    border-radius: 50px;
+
+    font-weight: bold;
+
+    margin-bottom: 18px;
+}
+
+.historia-texto h3 {
+    font-size: 34px;
+
+    line-height: 1.2;
+
+    margin-bottom: 22px;
+}
+
+.historia-texto p {
+    color: #64748b;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================
+   SERVICIOS
+========================= */
+
+.servicios {
+    padding: 110px 0;
+
+    background: #eef3fa;
+}
+
+.servicios-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 22px;
+}
+
+
+/* TARJETAS */
+
+.servicio {
+    min-height: 330px;
+
+    padding: 32px 28px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    border: 1px solid #dce4f0;
+
+    position: relative;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s,
+        box-shadow 0.35s;
+}
+
+.servicio::before {
+    content: "";
+
+    position: absolute;
+
+    width: 120px;
+
+    height: 120px;
+
+    border-radius: 50%;
+
+    background: #3764d812;
+
+    right: -40px;
+
+    top: -40px;
+}
+
+.servicio:hover {
+    transform: translateY(-10px);
+
+    box-shadow:
+        0 25px 45px #263b581c;
+}
+
+
+/* NÚMERO */
+
+.numero {
+    position: absolute;
+
+    right: 20px;
+
+    top: 18px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    color: #a0aec0;
+}
+
+
+/* ICONO */
+
+.icono {
+    font-size: 43px;
+
+    margin-bottom: 20px;
+}
+
+.servicio h3 {
+    font-size: 21px;
+
+    line-height: 1.2;
+
+    margin-bottom: 15px;
+}
+
+.servicio p {
+    color: #64748b;
+
+    font-size: 15px;
+}
+
+.flecha {
+    position: absolute;
+
+    bottom: 22px;
+
+    right: 25px;
+
+    font-size: 25px;
+
+    color: #3764d8;
+
+    transition: 0.3s;
+}
+
+.servicio:hover .flecha {
+    transform: translateX(8px);
+}
+
+
+/* =========================
+   COLORES INDIVIDUALES
+========================= */
+
+.servicio-1:hover {
+    border-color: #3764d8;
+}
+
+.servicio-2:hover {
+    border-color: #7c4dff;
+}
+
+.servicio-3:hover {
+    border-color: #00a896;
+}
+
+.servicio-4:hover {
+    border-color: #ff8c42;
+}
+
+.servicio-5:hover {
+    border-color: #e04f9d;
+}
+
+.servicio-6:hover {
+    border-color: #0096c7;
+}
+
+.servicio-7:hover {
+    border-color: #5c7cfa;
+}
+
+.servicio-8:hover {
+    border-color: #16a085;
+}
+
+
+/* =========================
+   VALORES
+========================= */
+
+.valores-seccion {
+    padding: 110px 0;
+
+    background: white;
+}
+
+.valores {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.valor {
+    text-align: center;
+
+    padding: 35px 20px;
+
+    border-radius: 15px;
+
+    transition: 0.3s;
+}
+
+.valor:hover {
+    background: #f2f6fc;
+
+    transform: translateY(-5px);
+}
+
+.valor span {
+    font-size: 42px;
+}
+
+.valor h3 {
+    margin: 15px 0 8px;
+}
+
+.valor p {
+    color: #64748b;
+}
+
+
+/* =========================
+   CONTACTO
+========================= */
+
+.contacto {
+    padding: 120px 20px;
+
+    text-align: center;
+
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            #2874c955,
+            transparent 35%
+        ),
+
+        linear-gradient(
+            135deg,
+            #07111f,
+            #172d4b
+        );
+}
+
+.contacto-contenido {
+    max-width: 800px;
+
+    margin: auto;
+}
+
+.contacto span {
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    color: #aebbd0;
+}
+
+.contacto h2 {
+    font-size: 50px;
+
+    line-height: 1.1;
+
+    margin: 20px 0;
+}
+
+.contacto p {
+    color: #cbd6e7;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 25px;
+
+    text-align: center;
+
+    background: #050d18;
+
+    color: #8795aa;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+
+    .servicios-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .valores {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .historia-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .hero {
+        min-height: 500px;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+    .titulo h2 {
+        font-size: 34px;
+    }
+
+    .servicios-grid,
+    .valores {
+        grid-template-columns: 1fr;
+    }
+
+    .imagen-empresa {
+        height: 300px;
+    }
+
+    .contacto h2 {
+        font-size: 36px;
+    }
+
+    .seccion,
+    .historia,
+    .servicios,
+    .valores-seccion {
+        padding: 75px 0;
+    }
+}

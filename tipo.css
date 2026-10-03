@@ -1,0 +1,1866 @@
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root {
+
+    --fondo: #05070d;
+    --fondo-2: #080d17;
+    --fondo-3: #0c1422;
+
+    --azul: #00d9ff;
+    --azul-2: #008cff;
+    --violeta: #705cff;
+
+    --blanco: #ffffff;
+    --texto: #d7dfeb;
+    --gris: #8190a5;
+    --gris-2: #4f5e73;
+
+    --borde: rgba(255,255,255,.09);
+    --borde-azul: rgba(0,217,255,.25);
+
+    --sombra:
+        0 30px 80px rgba(0,0,0,.40);
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    font-family: "Inter", sans-serif;
+
+    background: var(--fondo);
+
+    color: var(--blanco);
+
+    line-height: 1.6;
+
+    overflow-x: hidden;
+
+}
+
+
+/* =========================================================
+   BARRA DE DESPLAZAMIENTO
+========================================================= */
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: #03050a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+        var(--azul),
+        var(--azul-2)
+    );
+
+    border-radius: 20px;
+}
+
+
+/* =========================================================
+   CONTENEDOR
+========================================================= */
+
+.contenedor {
+
+    width: min(1200px, 90%);
+
+    margin: auto;
+
+}
+
+
+/* =========================================================
+   EFECTOS GENERALES
+========================================================= */
+
+.numero {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 22px;
+
+    color: var(--azul);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+}
+
+.numero::before {
+
+    content: "";
+
+    width: 28px;
+
+    height: 1px;
+
+    background: var(--azul);
+
+    box-shadow: 0 0 10px var(--azul);
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+
+    min-height: 760px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 75% 25%,
+            rgba(0,217,255,.18),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 20% 75%,
+            rgba(112,92,255,.14),
+            transparent 28%
+        ),
+
+        linear-gradient(
+            135deg,
+            #03050a,
+            #08111e 55%,
+            #050b14
+        );
+
+}
+
+
+/* =========================================================
+   RED TECNOLÓGICA DEL HERO
+========================================================= */
+
+.hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    opacity: .25;
+
+    background-image:
+
+        linear-gradient(
+            rgba(0,217,255,.07) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(0,217,255,.07) 1px,
+            transparent 1px
+        );
+
+    background-size: 70px 70px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent 90%
+        );
+
+}
+
+
+/* =========================================================
+   CÍRCULOS DEL HERO
+========================================================= */
+
+.hero-fondo {
+
+    position: absolute;
+
+    width: 700px;
+
+    height: 700px;
+
+    right: -230px;
+
+    top: -180px;
+
+    border: 1px solid rgba(0,217,255,.12);
+
+    border-radius: 50%;
+
+    box-shadow:
+
+        0 0 0 70px rgba(0,217,255,.025),
+
+        0 0 0 140px rgba(0,217,255,.018),
+
+        0 0 0 220px rgba(0,217,255,.01);
+
+    animation:
+        rotar 30s linear infinite;
+
+}
+
+.hero-fondo::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 14px;
+
+    height: 14px;
+
+    top: 100px;
+
+    left: 80px;
+
+    border-radius: 50%;
+
+    background: var(--azul);
+
+    box-shadow:
+        0 0 10px var(--azul),
+        0 0 35px var(--azul);
+
+}
+
+
+/* =========================================================
+   CONTENIDO HERO
+========================================================= */
+
+.hero-contenido {
+
+    width: min(1200px, 90%);
+
+    margin: auto;
+
+    position: relative;
+
+    z-index: 5;
+
+    animation:
+        aparecer 1s ease forwards;
+
+}
+
+
+.etiqueta {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 9px 17px;
+
+    border: 1px solid var(--borde-azul);
+
+    border-radius: 100px;
+
+    background:
+        rgba(0,217,255,.05);
+
+    color: #5ce5ff;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    backdrop-filter: blur(15px);
+
+}
+
+
+.etiqueta::before {
+
+    content: "";
+
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--azul);
+
+    box-shadow:
+        0 0 8px var(--azul),
+        0 0 20px var(--azul);
+
+    animation:
+        pulso 1.8s infinite;
+
+}
+
+
+.hero h1 {
+
+    max-width: 1000px;
+
+    margin-top: 30px;
+
+    font-family: "Space Grotesk", sans-serif;
+
+    font-size: clamp(
+        55px,
+        8vw,
+        105px
+    );
+
+    line-height: .91;
+
+    letter-spacing: -6px;
+
+}
+
+
+.hero h1 span {
+
+    display: block;
+
+    color: transparent;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #00e5ff,
+            #7c6cff,
+            #00e5ff
+        );
+
+    background-size: 200% auto;
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    animation:
+        gradiente 5s linear infinite;
+
+}
+
+
+.hero p {
+
+    max-width: 690px;
+
+    margin: 35px 0;
+
+    color: #91a0b5;
+
+    font-size: 17px;
+
+}
+
+
+.hero-botones {
+
+    display: flex;
+
+    gap: 14px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.btn-principal,
+.btn-secundario {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 14px 23px;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition: .35s ease;
+
+}
+
+
+.btn-principal {
+
+    color: #021018;
+
+    background:
+        linear-gradient(
+            135deg,
+            #00e5ff,
+            #00a9ff
+        );
+
+    box-shadow:
+        0 0 25px rgba(0,217,255,.2);
+
+}
+
+
+.btn-principal:hover {
+
+    transform:
+        translateY(-5px)
+        scale(1.02);
+
+    box-shadow:
+        0 15px 40px rgba(0,217,255,.3);
+
+}
+
+
+.btn-secundario {
+
+    color: white;
+
+    border: 1px solid var(--borde);
+
+    background:
+        rgba(255,255,255,.035);
+
+    backdrop-filter: blur(15px);
+
+}
+
+
+.btn-secundario:hover {
+
+    transform:
+        translateY(-5px);
+
+    border-color:
+        var(--azul);
+
+    background:
+        rgba(0,217,255,.07);
+
+}
+
+
+/* =========================================================
+   INDICADOR
+========================================================= */
+
+.hero-indicador {
+
+    position: absolute;
+
+    z-index: 5;
+
+    bottom: 35px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    text-align: center;
+
+    color: #46546a;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+}
+
+
+.hero-indicador span {
+
+    display: block;
+
+    margin-top: 8px;
+
+    color: var(--azul);
+
+    font-size: 20px;
+
+    animation:
+        bajar 1.5s infinite;
+
+}
+
+
+/* =========================================================
+   EMPRESA
+========================================================= */
+
+.empresa {
+
+    padding: 150px 0;
+
+    position: relative;
+
+    background:
+        #070b13;
+
+}
+
+
+.empresa::before {
+
+    content: "INNOVA";
+
+    position: absolute;
+
+    top: 60px;
+
+    right: -50px;
+
+    font-family: "Space Grotesk";
+
+    font-size: 180px;
+
+    font-weight: 900;
+
+    color: rgba(255,255,255,.012);
+
+    pointer-events: none;
+
+}
+
+
+.seccion-cabecera {
+
+    margin-bottom: 70px;
+
+}
+
+
+.seccion-cabecera h2 {
+
+    max-width: 850px;
+
+    font-family: "Space Grotesk";
+
+    font-size: clamp(
+        45px,
+        6vw,
+        78px
+    );
+
+    line-height: .95;
+
+    letter-spacing: -4px;
+
+}
+
+
+.seccion-cabecera h2 span {
+
+    color: var(--azul);
+
+}
+
+
+.empresa-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1.15fr
+        .85fr;
+
+    gap: 90px;
+
+    align-items: center;
+
+}
+
+
+.empresa-texto p {
+
+    max-width: 760px;
+
+    margin-bottom: 22px;
+
+    color: #8492a7;
+
+    font-size: 15px;
+
+}
+
+
+.empresa-texto .texto-grande {
+
+    color: #d3dce8;
+
+    font-size: 20px;
+
+    line-height: 1.8;
+
+}
+
+
+.empresa-texto strong {
+
+    color: white;
+
+}
+
+
+/* =========================================================
+   TARJETA TIPO DE EMPRESA
+========================================================= */
+
+.empresa-dato {
+
+    position: relative;
+
+    padding: 45px;
+
+    overflow: hidden;
+
+    border: 1px solid
+        rgba(0,217,255,.18);
+
+    border-radius: 28px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(16,31,49,.9),
+            rgba(6,12,21,.95)
+        );
+
+    box-shadow:
+        var(--sombra);
+
+    backdrop-filter: blur(20px);
+
+}
+
+
+.empresa-dato::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+
+    height: 220px;
+
+    right: -110px;
+
+    top: -110px;
+
+    border: 1px solid
+        rgba(0,217,255,.15);
+
+    border-radius: 50%;
+
+}
+
+
+.empresa-dato::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 6px;
+
+    height: 6px;
+
+    top: 30px;
+
+    right: 35px;
+
+    border-radius: 50%;
+
+    background: var(--azul);
+
+    box-shadow:
+        0 0 10px var(--azul),
+        0 0 25px var(--azul);
+
+}
+
+
+.dato-principal {
+
+    text-align: center;
+
+}
+
+
+.icono {
+
+    display: block;
+
+    margin-bottom: 15px;
+
+    font-size: 55px;
+
+    filter:
+        drop-shadow(
+            0 0 15px
+            rgba(0,217,255,.25)
+        );
+
+}
+
+
+.dato-principal > strong {
+
+    color: var(--azul);
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+}
+
+
+.dato-principal h3 {
+
+    margin-top: 16px;
+
+    font-family: "Space Grotesk";
+
+    font-size: 27px;
+
+    line-height: 1.2;
+
+}
+
+
+.dato-linea {
+
+    height: 1px;
+
+    margin: 35px 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.1),
+            transparent
+        );
+
+}
+
+
+.dato-mini {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+
+}
+
+
+.dato-mini div {
+
+    padding: 18px;
+
+    border: 1px solid
+        rgba(255,255,255,.06);
+
+    border-radius: 13px;
+
+    background:
+        rgba(255,255,255,.025);
+
+}
+
+
+.dato-mini span {
+
+    font-size: 21px;
+
+}
+
+
+.dato-mini small {
+
+    display: block;
+
+    margin-top: 8px;
+
+    color: #58677c;
+
+    font-size: 10px;
+
+}
+
+
+.dato-mini strong {
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================================
+   ACTIVIDAD
+========================================================= */
+
+.actividad {
+
+    padding: 150px 0;
+
+    position: relative;
+
+    background:
+        #0a101a;
+
+}
+
+
+.actividad::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+
+    height: 450px;
+
+    right: -250px;
+
+    top: 20%;
+
+    border-radius: 50%;
+
+    background:
+        rgba(112,92,255,.08);
+
+    filter: blur(80px);
+
+}
+
+
+.actividad-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        .75fr
+        1.25fr;
+
+    gap: 100px;
+
+}
+
+
+.actividad-titulo {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+.actividad-titulo h2 {
+
+    font-family: "Space Grotesk";
+
+    font-size: clamp(
+        48px,
+        6vw,
+        78px
+    );
+
+    line-height: .93;
+
+    letter-spacing: -4px;
+
+}
+
+
+.actividad-titulo h2 span {
+
+    color: var(--azul);
+
+}
+
+
+.actividad-texto {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+.actividad-texto > p {
+
+    margin-bottom: 22px;
+
+    color: #8795a8;
+
+    font-size: 16px;
+
+}
+
+
+.actividad-lista {
+
+    margin-top: 45px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.08);
+
+}
+
+
+.actividad-lista div {
+
+    display: grid;
+
+    grid-template-columns: 50px 1fr;
+
+    align-items: center;
+
+    padding: 22px 0;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.08);
+
+    transition: .3s ease;
+
+}
+
+
+.actividad-lista div:hover {
+
+    padding-left: 15px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,217,255,.05),
+            transparent
+        );
+
+}
+
+
+.actividad-lista span {
+
+    color: var(--azul);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+}
+
+
+.actividad-lista strong {
+
+    font-size: 14px;
+
+}
+
+
+/* =========================================================
+   INNOVACIÓN
+========================================================= */
+
+.innovacion {
+
+    padding: 150px 0;
+
+    background:
+        #060a11;
+
+}
+
+
+.centro {
+
+    max-width: 850px;
+
+    margin:
+        0 auto 70px;
+
+    text-align: center;
+
+}
+
+
+.centro h2 {
+
+    margin-bottom: 25px;
+
+}
+
+
+.centro p {
+
+    color: #7e8da2;
+
+    font-size: 15px;
+
+}
+
+
+/* =========================================================
+   TARJETAS DE INNOVACIÓN
+========================================================= */
+
+.innovacion-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 16px;
+
+}
+
+
+.innovacion-card {
+
+    min-height: 350px;
+
+    position: relative;
+
+    padding: 30px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(255,255,255,.07);
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #101b2b,
+            #080e18
+        );
+
+    transition:
+        .45s cubic-bezier(
+            .2,
+            .8,
+            .2,
+            1
+        );
+
+}
+
+
+.innovacion-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 170px;
+
+    height: 170px;
+
+    right: -90px;
+
+    bottom: -90px;
+
+    border:
+        1px solid
+        rgba(0,217,255,.12);
+
+    border-radius: 50%;
+
+    transition: .5s ease;
+
+}
+
+
+.innovacion-card:hover {
+
+    transform:
+        translateY(-14px);
+
+    border-color:
+        rgba(0,217,255,.35);
+
+    box-shadow:
+        0 30px 70px
+        rgba(0,0,0,.4);
+
+}
+
+
+.innovacion-card:hover::before {
+
+    transform: scale(1.8);
+
+}
+
+
+.card-numero {
+
+    color: #4f5d72;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+}
+
+
+.card-icono {
+
+    margin: 38px 0 22px;
+
+    font-size: 45px;
+
+    transition: .4s ease;
+
+}
+
+
+.innovacion-card:hover
+.card-icono {
+
+    transform:
+        translateY(-5px)
+        scale(1.1);
+
+}
+
+
+.innovacion-card h3 {
+
+    margin-bottom: 15px;
+
+    font-family:
+        "Space Grotesk";
+
+    font-size: 19px;
+
+}
+
+
+.innovacion-card p {
+
+    color: #78879b;
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================================
+   PROCESO
+========================================================= */
+
+.proceso {
+
+    padding: 150px 0;
+
+    background:
+        #0a101a;
+
+}
+
+
+.proceso-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 18px;
+
+}
+
+
+.proceso-item {
+
+    display: grid;
+
+    grid-template-columns:
+        60px 1fr;
+
+    gap: 25px;
+
+    padding: 30px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(255,255,255,.07);
+
+    border-radius: 18px;
+
+    background:
+        rgba(255,255,255,.025);
+
+    transition: .35s ease;
+
+}
+
+
+.proceso-item:hover {
+
+    transform:
+        translateY(-6px);
+
+    border-color:
+        rgba(0,217,255,.25);
+
+}
+
+
+.proceso-item > span {
+
+    color: var(--azul);
+
+    font-family:
+        "Space Grotesk";
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+}
+
+
+.proceso-item h3 {
+
+    margin-bottom: 8px;
+
+    font-size: 18px;
+
+}
+
+
+.proceso-item p {
+
+    color: #748398;
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================================
+   IDENTIDAD
+========================================================= */
+
+.caracteristicas {
+
+    padding: 150px 0;
+
+    background:
+
+        radial-gradient(
+            circle at 10% 50%,
+            rgba(0,217,255,.09),
+            transparent 25%
+        ),
+
+        #060a11;
+
+}
+
+
+.caracteristicas-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    gap: 100px;
+
+    align-items: center;
+
+}
+
+
+.caracteristicas h2 {
+
+    max-width: 600px;
+
+    margin-top: 20px;
+
+    font-family:
+        "Space Grotesk";
+
+    font-size: clamp(
+        48px,
+        6vw,
+        78px
+    );
+
+    line-height: .93;
+
+    letter-spacing: -4px;
+
+}
+
+
+.caracteristicas h2 span {
+
+    color: var(--azul);
+
+}
+
+
+.caracteristicas-lista > div {
+
+    display: grid;
+
+    grid-template-columns:
+        35px
+        1fr;
+
+    padding: 21px 0;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.08);
+
+}
+
+
+.caracteristicas-lista span {
+
+    color: var(--azul);
+
+    font-weight: 900;
+
+}
+
+
+.caracteristicas-lista strong {
+
+    font-size: 15px;
+
+}
+
+
+.caracteristicas-lista p {
+
+    grid-column: 2;
+
+    margin-top: 5px;
+
+    color: #718095;
+
+    font-size: 12px;
+
+}
+
+
+/* =========================================================
+   PROPÓSITO
+========================================================= */
+
+.proposito {
+
+    padding: 180px 0;
+
+    position: relative;
+
+    overflow: hidden;
+
+    text-align: center;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            rgba(0,217,255,.14),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 70% 80%,
+            rgba(112,92,255,.12),
+            transparent 25%
+        ),
+
+        #04070c;
+
+}
+
+
+.proposito::before {
+
+    content: "∞";
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    font-family:
+        "Space Grotesk";
+
+    font-size: 500px;
+
+    line-height: 1;
+
+    color:
+        rgba(255,255,255,.012);
+
+}
+
+
+.proposito > .contenedor {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+.proposito h2 {
+
+    font-family:
+        "Space Grotesk";
+
+    font-size: clamp(
+        55px,
+        8vw,
+        105px
+    );
+
+    line-height: .9;
+
+    letter-spacing: -6px;
+
+}
+
+
+.proposito h2 span {
+
+    color: var(--azul);
+
+}
+
+
+.proposito p {
+
+    max-width: 750px;
+
+    margin: 40px auto;
+
+    color: #8593a7;
+
+    font-size: 16px;
+
+}
+
+
+.proposito-linea {
+
+    width: 100px;
+
+    height: 2px;
+
+    margin: 45px auto;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--azul),
+            transparent
+        );
+
+    box-shadow:
+        0 0 20px
+        rgba(0,217,255,.6);
+
+}
+
+
+.proposito > .contenedor > strong {
+
+    color: #58677c;
+
+    font-size: 11px;
+
+    letter-spacing: 5px;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+    padding: 40px 20px;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.06);
+
+    background:
+        #020408;
+
+    text-align: center;
+
+}
+
+
+.footer-contenido {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+}
+
+
+.footer-contenido strong {
+
+    font-family:
+        "Space Grotesk";
+
+    font-size: 14px;
+
+}
+
+
+.footer-contenido span {
+
+    color: var(--azul);
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+}
+
+
+.footer-contenido p {
+
+    margin-top: 12px;
+
+    color: #46546a;
+
+    font-size: 10px;
+
+}
+
+
+/* =========================================================
+   ANIMACIONES
+========================================================= */
+
+@keyframes aparecer {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(35px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+@keyframes pulso {
+
+    0%,100% {
+
+        opacity: 1;
+
+        box-shadow:
+            0 0 8px var(--azul),
+            0 0 20px var(--azul);
+
+    }
+
+    50% {
+
+        opacity: .4;
+
+        box-shadow:
+            0 0 3px var(--azul);
+
+    }
+
+}
+
+
+@keyframes bajar {
+
+    0%,100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(7px);
+
+    }
+
+}
+
+
+@keyframes rotar {
+
+    from {
+
+        transform:
+            rotate(0deg);
+
+    }
+
+    to {
+
+        transform:
+            rotate(360deg);
+
+    }
+
+}
+
+
+@keyframes gradiente {
+
+    to {
+
+        background-position:
+            200% center;
+
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+    .empresa-grid,
+    .actividad-grid,
+    .caracteristicas-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+
+    }
+
+
+    .innovacion-grid {
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+}
+
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .hero {
+
+        min-height: 680px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size: 52px;
+
+        letter-spacing: -3px;
+
+    }
+
+
+    .hero p {
+
+        font-size: 15px;
+
+    }
+
+
+    .hero-indicador {
+
+        display: none;
+
+    }
+
+
+    .empresa,
+    .actividad,
+    .innovacion,
+    .proceso,
+    .caracteristicas {
+
+        padding: 95px 0;
+
+    }
+
+
+    .seccion-cabecera h2,
+    .actividad-titulo h2 {
+
+        font-size: 47px;
+
+    }
+
+
+    .empresa-dato {
+
+        padding: 30px 22px;
+
+    }
+
+
+    .dato-mini {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .innovacion-grid,
+    .proceso-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .innovacion-card {
+
+        min-height: 300px;
+
+    }
+
+
+    .caracteristicas h2 {
+
+        font-size: 48px;
+
+    }
+
+
+    .proposito {
+
+        padding: 120px 20px;
+
+    }
+
+
+    .proposito h2 {
+
+        font-size: 55px;
+
+        letter-spacing: -4px;
+
+    }
+
+}
+

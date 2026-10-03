@@ -1,0 +1,563 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color: #172033;
+    line-height: 1.6;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+/* ================================
+   HERO
+================================ */
+
+.hero {
+    min-height: 540px;
+    display: flex;
+    align-items: center;
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            #168bd855,
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 15% 80%,
+            #635bff44,
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #050c18,
+            #102b4b
+        );
+}
+
+.hero-contenido {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.etiqueta {
+    display: inline-block;
+    color: #76c8ff;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.año-grande {
+    font-size: clamp(80px, 13vw, 150px);
+    font-weight: 900;
+    line-height: .9;
+
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #5bbcff
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(40px, 6vw, 68px);
+    line-height: 1.05;
+    max-width: 850px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    max-width: 680px;
+    color: #c8d6e8;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+
+/* ================================
+   BOTÓN
+================================ */
+
+.btn-volver {
+    display: inline-block;
+    padding: 14px 26px;
+    background: white;
+    color: #10223b;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: .3s;
+}
+
+.btn-volver:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 15px 30px #0004;
+}
+
+
+/* ================================
+   PRESENTACIÓN 2022 + IMAGEN
+================================ */
+
+.presentacion {
+    padding: 110px 0;
+    background: white;
+}
+
+.presentacion-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+
+/* ================================
+   IMAGEN
+================================ */
+
+.imagen-empresa {
+    height: 400px;
+}
+
+.imagen-placeholder {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #dce8f7,
+            #b8cce5
+        );
+
+    border: 2px dashed #829bc0;
+
+    color: #53647b;
+
+    transition: .4s;
+}
+
+.imagen-placeholder:hover {
+    transform: scale(1.02);
+
+    box-shadow:
+        0 25px 50px #1e355522;
+}
+
+
+/* IMAGEN DENTRO DEL CONTENEDOR */
+
+.imagen-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: 23px;
+
+    transition: transform .4s;
+}
+
+.imagen-placeholder:hover img {
+    transform: scale(1.03);
+}
+
+.imagen-placeholder span {
+    font-size: 80px;
+    margin-bottom: 15px;
+}
+
+.imagen-placeholder h3 {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.imagen-placeholder p {
+    font-size: 15px;
+}
+
+
+/* ================================
+   RESUMEN
+================================ */
+
+.etiqueta-seccion {
+    color: #3764d8;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.año-resumen {
+    font-size: 70px;
+    font-weight: 900;
+    line-height: 1;
+    margin: 18px 0;
+    color: #3764d8;
+}
+
+.resumen h2 {
+    font-size: 42px;
+    line-height: 1.1;
+    margin-bottom: 22px;
+}
+
+.resumen p {
+    color: #64748b;
+    margin-bottom: 17px;
+    font-size: 16px;
+}
+
+
+/* ================================
+   PREGUNTAS
+================================ */
+
+.introduccion {
+    padding: 110px 0;
+    background: #f4f7fb;
+}
+
+.titulo-seccion {
+    max-width: 800px;
+    margin-bottom: 55px;
+}
+
+.titulo-seccion span {
+    color: #3764d8;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.titulo-seccion h2 {
+    font-size: 45px;
+    line-height: 1.1;
+    margin: 12px 0 18px;
+}
+
+.titulo-seccion p {
+    color: #68758a;
+    font-size: 17px;
+}
+
+
+/* ================================
+   GRID DE PREGUNTAS
+================================ */
+
+.informacion-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+
+/* ================================
+   TARJETAS
+================================ */
+
+.info-item {
+    position: relative;
+
+    display: flex;
+    gap: 22px;
+
+    padding: 32px;
+
+    background: white;
+
+    border: 1px solid #dce5f1;
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    transition:
+        transform .35s,
+        box-shadow .35s,
+        border-color .35s;
+}
+
+.info-item::before {
+    content: "";
+
+    position: absolute;
+
+    width: 130px;
+    height: 130px;
+
+    border-radius: 50%;
+
+    background: #3764d810;
+
+    right: -50px;
+    top: -50px;
+
+    transition: .4s;
+}
+
+.info-item:hover::before {
+    transform: scale(1.8);
+}
+
+.info-item:hover {
+    transform: translateY(-8px);
+
+    border-color: #3764d8;
+
+    box-shadow:
+        0 20px 40px #263b581c;
+}
+
+
+/* ================================
+   NÚMERO
+================================ */
+
+.numero {
+    position: absolute;
+
+    right: 22px;
+    top: 18px;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    color: #9ba8b9;
+}
+
+
+/* ================================
+   ICONOS
+================================ */
+
+.icono {
+    min-width: 60px;
+    height: 60px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 15px;
+
+    background: #e7efff;
+
+    font-size: 29px;
+
+    z-index: 1;
+}
+
+
+/* ================================
+   CONTENIDO
+================================ */
+
+.contenido {
+    position: relative;
+    z-index: 1;
+}
+
+.contenido h3 {
+    font-size: 20px;
+    line-height: 1.25;
+
+    margin-bottom: 12px;
+
+    padding-right: 25px;
+}
+
+.contenido p {
+    color: #66758a;
+    font-size: 15px;
+}
+
+
+/* ================================
+   FRASE FINAL
+================================ */
+
+.frase-final {
+    padding: 110px 20px;
+
+    text-align: center;
+
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            #2874c955,
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #07111f,
+            #172d4b
+        );
+}
+
+.frase-contenido {
+    max-width: 850px;
+    margin: auto;
+}
+
+.frase-contenido span {
+    color: #7dc8ff;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+.frase-contenido h2 {
+    font-size: 50px;
+    line-height: 1.1;
+
+    margin: 20px 0;
+}
+
+.frase-contenido p {
+    color: #cbd6e7;
+    font-size: 17px;
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+    padding: 25px;
+
+    text-align: center;
+
+    background: #050d18;
+
+    color: #8795aa;
+
+    font-size: 14px;
+}
+
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 900px) {
+
+    .presentacion-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .informacion-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ================================
+   CELULAR
+================================ */
+
+@media (max-width: 600px) {
+
+    .hero {
+        min-height: 500px;
+    }
+
+    .año-grande {
+        font-size: 90px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .presentacion {
+        padding: 75px 0;
+    }
+
+    /* IMAGEN MÁS PEQUEÑA EN CELULAR */
+
+    .imagen-empresa {
+        height: 280px;
+    }
+
+    .año-resumen {
+        font-size: 55px;
+    }
+
+    .resumen h2 {
+        font-size: 34px;
+    }
+
+    .introduccion {
+        padding: 75px 0;
+    }
+
+    .titulo-seccion h2 {
+        font-size: 34px;
+    }
+
+    .info-item {
+        flex-direction: column;
+        padding: 28px 22px;
+    }
+
+    .icono {
+        width: 60px;
+    }
+
+    .frase-final {
+        padding: 80px 20px;
+    }
+
+    .frase-contenido h2 {
+        font-size: 36px;
+    }
+}
+

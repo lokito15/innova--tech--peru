@@ -1,0 +1,1025 @@
+/* =====================================================
+   CONFIGURACIÓN GENERAL
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #f5f7ff;
+    color: #172033;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 1150px;
+    margin: auto;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(12, 18, 36, 0.95);
+    backdrop-filter: blur(15px);
+
+    color: white;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.nav {
+    min-height: 80px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: linear-gradient(135deg, #00d4ff, #7357ff);
+
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.logo h2 {
+    font-size: 16px;
+    line-height: 1;
+}
+
+.logo span {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #00d4ff;
+}
+
+
+/* MENÚ */
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: #dce3f4;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #00d4ff;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+
+    padding: 100px 8%;
+
+    color: white;
+
+    background:
+        radial-gradient(circle at 80% 20%, rgba(0,212,255,0.25), transparent 30%),
+        radial-gradient(circle at 20% 80%, rgba(115,87,255,0.25), transparent 30%),
+        linear-gradient(135deg, #0c1224, #171f3c);
+}
+
+.hero-contenido {
+    max-width: 650px;
+}
+
+.etiqueta {
+    display: inline-block;
+
+    padding: 8px 15px;
+    margin-bottom: 20px;
+
+    border: 1px solid rgba(0,212,255,0.4);
+    border-radius: 50px;
+
+    color: #00d4ff;
+
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-size: clamp(40px, 6vw, 70px);
+    line-height: 1.05;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #00d4ff;
+}
+
+.hero p {
+    max-width: 600px;
+
+    color: #bdc7dc;
+    font-size: 16px;
+}
+
+.botones {
+    display: flex;
+    gap: 15px;
+    margin-top: 35px;
+}
+
+.btn {
+    padding: 13px 25px;
+    border-radius: 10px;
+
+    font-weight: 600;
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+.btn.principal {
+    background: #00d4ff;
+    color: #07111f;
+}
+
+.btn.principal:hover {
+    transform: translateY(-3px);
+}
+
+.btn.secundario {
+    border: 1px solid #52617d;
+    color: white;
+}
+
+.btn.secundario:hover {
+    border-color: #00d4ff;
+    color: #00d4ff;
+}
+
+
+/* HERO CARD */
+
+.hero-card {
+    width: 350px;
+
+    padding: 35px;
+
+    background: rgba(255,255,255,0.08);
+
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 25px;
+
+    backdrop-filter: blur(10px);
+
+    box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+}
+
+.icono-grande {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.hero-card h3 {
+    font-size: 25px;
+}
+
+.hero-card p {
+    margin: 10px 0 30px;
+}
+
+.datos {
+    display: flex;
+    justify-content: space-between;
+}
+
+.datos div {
+    display: flex;
+    flex-direction: column;
+}
+
+.datos strong {
+    color: #00d4ff;
+    font-size: 22px;
+}
+
+.datos small {
+    color: #aab4ca;
+}
+
+
+/* =====================================================
+   TÍTULOS
+===================================================== */
+
+.titulo-seccion {
+    margin-bottom: 45px;
+}
+
+.titulo-seccion span {
+    color: #7357ff;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.titulo-seccion h2 {
+    max-width: 700px;
+
+    margin-top: 10px;
+
+    font-size: clamp(30px, 4vw, 45px);
+    line-height: 1.15;
+}
+
+.titulo-seccion p {
+    margin-top: 15px;
+    color: #667085;
+}
+
+.centro {
+    text-align: center;
+}
+
+.centro h2 {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =====================================================
+   INFORMACIÓN GENERAL
+===================================================== */
+
+.informacion {
+    padding: 100px 0;
+    background: white;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.info-card {
+    padding: 30px;
+
+    border-radius: 18px;
+
+    background: #f6f8ff;
+
+    border: 1px solid #e6eaff;
+
+    transition: 0.3s;
+}
+
+.info-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow: 0 15px 35px rgba(40,50,100,0.1);
+}
+
+.info-card > span {
+    font-size: 35px;
+}
+
+.info-card h3 {
+    margin-top: 15px;
+    font-size: 17px;
+}
+
+.info-card p {
+    color: #68738b;
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   NOSOTROS
+===================================================== */
+
+.nosotros {
+    padding: 110px 0;
+}
+
+.nosotros-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.nosotros-imagen {
+    min-height: 500px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 30px;
+
+    background:
+        radial-gradient(circle at 50% 20%, #00d4ff, transparent 20%),
+        linear-gradient(145deg, #11182d, #28365f);
+
+    overflow: hidden;
+}
+
+.imagen-fondo {
+    text-align: center;
+    color: white;
+}
+
+.imagen-fondo span {
+    display: block;
+    font-size: 120px;
+    margin-bottom: 20px;
+}
+
+.imagen-fondo h3 {
+    font-size: 25px;
+}
+
+.nosotros-texto p {
+    margin-bottom: 20px;
+    color: #667085;
+}
+
+.estadisticas {
+    display: flex;
+    gap: 35px;
+    margin-top: 35px;
+}
+
+.estadisticas div {
+    display: flex;
+    flex-direction: column;
+}
+
+.estadisticas strong {
+    color: #7357ff;
+    font-size: 30px;
+}
+
+.estadisticas span {
+    color: #697386;
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   MISIÓN VISIÓN VALORES
+===================================================== */
+
+.mision {
+    padding: 100px 0;
+
+    background: #10172b;
+    color: white;
+}
+
+.mvv-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.mvv-card {
+    padding: 35px;
+
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+
+    background: rgba(255,255,255,0.05);
+}
+
+.mvv-icon {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.mvv-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.mvv-card p {
+    color: #aeb8cf;
+    font-size: 14px;
+}
+
+.mvv-card ul {
+    list-style: none;
+    color: #aeb8cf;
+}
+
+.mvv-card li {
+    padding: 6px 0;
+}
+
+.mvv-card li::before {
+    content: "✓";
+    color: #00d4ff;
+    margin-right: 10px;
+}
+
+
+/* =====================================================
+   SERVICIOS
+===================================================== */
+
+.servicios {
+    padding: 110px 0;
+    background: white;
+}
+
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.servicio-card {
+    position: relative;
+
+    padding: 35px;
+
+    min-height: 270px;
+
+    border: 1px solid #e5e9f5;
+    border-radius: 20px;
+
+    background: white;
+
+    overflow: hidden;
+
+    transition: 0.3s;
+}
+
+.servicio-card:hover {
+    transform: translateY(-8px);
+
+    border-color: #00d4ff;
+
+    box-shadow: 0 20px 45px rgba(30,40,90,0.12);
+}
+
+.servicio-icon {
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+
+    background: #edfaff;
+
+    font-size: 28px;
+
+    margin-bottom: 25px;
+}
+
+.servicio-card h3 {
+    margin-bottom: 12px;
+    font-size: 20px;
+}
+
+.servicio-card p {
+    color: #707a90;
+    font-size: 14px;
+}
+
+.servicio-numero {
+    position: absolute;
+    right: 20px;
+    bottom: 15px;
+
+    color: #edf0f8;
+
+    font-size: 55px;
+    font-weight: 800;
+}
+
+
+/* =====================================================
+   PÚBLICO OBJETIVO
+===================================================== */
+
+.publico {
+    padding: 100px 0;
+    background: #f1f4ff;
+}
+
+.publico-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.publico p {
+    color: #667085;
+}
+
+.publico-lista {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.publico-lista div {
+    padding: 25px;
+
+    background: white;
+
+    border-radius: 15px;
+
+    font-weight: 600;
+
+    box-shadow: 0 8px 25px rgba(30,40,80,0.06);
+}
+
+
+/* =====================================================
+   HISTORIA
+===================================================== */
+
+.historia {
+    padding: 110px 0;
+    background: white;
+}
+
+.timeline {
+    max-width: 800px;
+    margin: auto;
+
+    border-left: 2px solid #dce3f4;
+}
+
+.timeline-item {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 120px 1fr;
+
+    gap: 30px;
+
+    padding: 0 0 45px 40px;
+}
+
+.timeline-item::before {
+    content: "";
+
+    position: absolute;
+
+    left: -8px;
+    top: 4px;
+
+    width: 14px;
+    height: 14px;
+
+    border-radius: 50%;
+
+    background: #00d4ff;
+
+    border: 4px solid white;
+
+    box-shadow: 0 0 0 2px #00d4ff;
+}
+
+.timeline-año {
+    color: #7357ff;
+
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.timeline-contenido h3 {
+    margin-bottom: 8px;
+}
+
+.timeline-contenido p {
+    color: #707a90;
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   GALERÍA
+===================================================== */
+
+.galeria {
+    padding: 110px 0;
+    background: #f5f7ff;
+}
+
+.galeria-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    grid-auto-rows: 230px;
+
+    gap: 18px;
+}
+
+.galeria-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 20px;
+
+    color: white;
+
+    background:
+        radial-gradient(circle at 50% 30%, rgba(0,212,255,0.5), transparent 25%),
+        linear-gradient(145deg, #11182d, #33446f);
+
+    text-align: center;
+
+    transition: 0.3s;
+}
+
+.galeria-item:hover {
+    transform: scale(1.02);
+}
+
+.galeria-item.grande {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.galeria-item span {
+    font-size: 55px;
+}
+
+.galeria-item h3 {
+    margin-top: 10px;
+}
+
+
+/* =====================================================
+   CONTACTO
+===================================================== */
+
+.contacto {
+    padding: 110px 0;
+
+    background:
+        linear-gradient(135deg, #10172b, #1c2850);
+
+    color: white;
+}
+
+.contacto-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.contacto-info > p {
+    color: #b9c2d6;
+    margin-bottom: 35px;
+}
+
+.dato-contacto {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.dato-contacto > span {
+    font-size: 25px;
+}
+
+.dato-contacto strong {
+    font-size: 14px;
+}
+
+.dato-contacto p {
+    color: #aeb8ce;
+    font-size: 13px;
+}
+
+.redes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.redes a {
+    padding: 8px 14px;
+
+    border: 1px solid #445171;
+
+    border-radius: 50px;
+
+    font-size: 12px;
+
+    transition: 0.3s;
+}
+
+.redes a:hover {
+    border-color: #00d4ff;
+    color: #00d4ff;
+}
+
+
+/* FORMULARIO */
+
+.formulario {
+    padding: 35px;
+
+    background: white;
+
+    color: #172033;
+
+    border-radius: 22px;
+}
+
+.formulario h3 {
+    margin-bottom: 25px;
+    font-size: 25px;
+}
+
+.formulario label {
+    display: block;
+
+    margin: 15px 0 7px;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.formulario input,
+.formulario textarea {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: 1px solid #dce2ef;
+    border-radius: 10px;
+
+    outline: none;
+
+    font-family: inherit;
+
+    transition: 0.3s;
+}
+
+.formulario input:focus,
+.formulario textarea:focus {
+    border-color: #00bfe8;
+
+    box-shadow: 0 0 0 3px rgba(0,212,255,0.1);
+}
+
+.formulario textarea {
+    resize: vertical;
+}
+
+.formulario button {
+    width: 100%;
+
+    margin-top: 20px;
+
+    padding: 14px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #10172b;
+    color: white;
+
+    font-family: inherit;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.formulario button:hover {
+    background: #00bfe8;
+    color: #07111f;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    padding: 45px 0;
+
+    background: #090e1c;
+
+    color: white;
+}
+
+.footer-contenido {
+    text-align: center;
+}
+
+.footer-contenido .logo {
+    justify-content: center;
+}
+
+.footer-contenido > p {
+    margin-top: 20px;
+    color: #8d98af;
+    font-size: 13px;
+}
+
+.footer-line {
+    width: 100%;
+    height: 1px;
+
+    margin: 30px 0;
+
+    background: #242c40;
+}
+
+.copyright {
+    font-size: 12px !important;
+}
+
+.docente {
+    color: #00d4ff !important;
+}
+
+
+/* =====================================================
+   RESPONSIVE - TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    nav {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 11px;
+    }
+
+    .hero {
+        padding: 80px 6%;
+    }
+
+    .hero-card {
+        width: 300px;
+    }
+
+    .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .servicios-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .mvv-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =====================================================
+   RESPONSIVE - CELULAR
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .nav {
+        flex-direction: column;
+        gap: 15px;
+
+        padding: 15px 0;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 70px 5%;
+    }
+
+    .hero-card {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .botones {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .info-grid,
+    .servicios-grid,
+    .mvv-grid,
+    .nosotros-grid,
+    .publico-grid,
+    .contacto-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nosotros-grid,
+    .publico-grid,
+    .contacto-grid {
+        gap: 45px;
+    }
+
+    .nosotros-imagen {
+        min-height: 350px;
+    }
+
+    .estadisticas {
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .estadisticas strong {
+        font-size: 24px;
+    }
+
+    .publico-lista {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+
+    .galeria-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .galeria-item.grande {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+}
